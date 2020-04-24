@@ -44,9 +44,9 @@ function getCookieURL(request) {
   if (cookieData) {
     const cookies = cookieData.split(";")
     cookies.forEach((cookie) => {
-      const cookieValues = cookie.split("=")
+      let cookieValues = cookie.split("=")
 
-      const cookieName = cookieValues[0]
+      const cookieName = cookieValues[0].trim()
       if (cookieName === "URL") {
         url = cookieValues[1]
       }
